@@ -4,20 +4,20 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Home;
+use App\Models\Product;
 
-class HomeController extends Controller
+class ProductController extends Controller
 {
     //public $rootview;
     public function __construct()
     {
-        $this->rootview='FrontEnd.home.';
+        $this->rootview='FrontEnd.product.';
     }
 
     public function index()
     {
-        $products = Home::all();
-        return view($this->rootview.'home', compact('products'));
+        $products = Product::all();
+        return view($this->rootview.'products', compact('products'));
     }
 
     public function cart()
