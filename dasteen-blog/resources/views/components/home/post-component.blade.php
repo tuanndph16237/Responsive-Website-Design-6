@@ -19,12 +19,11 @@
         <div class="grid grid-cols-1 md:grid-cols-4 mx-4 md:mx-0 gap-8 py-8">
             @for ($i = 0; $i < 4; $i++) <div class="max-w-sm bg-white dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                    <img class="rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                    <img class="rounded-lg" src="https://hoantt.vn/wp-content/uploads/2023/06/aT-1-300x200.jpg" alt="" />
                 </a>
                 <div class="py-4">
                     <a href="#">
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                            technology acquisitions 2021</h3>
+                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mẹ trao tặng con trọn dinh dưỡng với chương trình “Chọn chất lượng vàng – Tương lai tỏa sáng”</h3>
                     </a>
 
                     <div class="flex items-center space-x-4 py-4 w-full">

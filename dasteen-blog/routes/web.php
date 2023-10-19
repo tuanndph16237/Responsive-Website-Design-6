@@ -4,6 +4,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/su-kien', [EventController::class, 'index'])->name('event');
+Route::get('/gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('/category', [CategoryController::class, 'category'])->name('blog.category');
 Route::get('/chi-tiet-bai-viet', [BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/dashboard', function () {
