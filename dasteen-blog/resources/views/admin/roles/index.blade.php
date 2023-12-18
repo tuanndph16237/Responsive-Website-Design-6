@@ -13,8 +13,9 @@
                     @can('role_delete')
                     <a href="#" id="deleteSelectRole" class="btn btn-danger add-list"><i class="las la-trash"></i>Xóa lựa chọn</a>
                     @endcan
+
                     @can('role_create')
-                    <a href="{{ route('roles.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm vai trò</a>
+                    <a href="{{ route('roles.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm vai trò</a></a>
                     @endcan
                 </div>
             </div>

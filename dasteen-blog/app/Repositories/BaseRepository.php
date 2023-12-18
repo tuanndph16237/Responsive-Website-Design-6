@@ -72,4 +72,15 @@ abstract class BaseRepository implements BaseRepositoryInterface
     {
         return $this->model->all();
     }
+
+    /**
+     * all
+     *
+     * @param array $ids
+     * @return mixed
+     */
+    public function massDestroy(array $ids): mixed
+    {
+        $this->model->whereIn('id', $ids)->delete();
+    }
 }

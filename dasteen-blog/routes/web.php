@@ -24,9 +24,9 @@ Route::get('/su-kien', [EventController::class, 'index'])->name('event');
 Route::get('/gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('/category', [CategoryController::class, 'category'])->name('blog.category');
 Route::get('/chi-tiet-bai-viet', [BlogController::class, 'detail'])->name('blog.detail');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

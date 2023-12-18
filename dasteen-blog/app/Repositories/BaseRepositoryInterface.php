@@ -43,4 +43,11 @@ interface BaseRepositoryInterface
      * @return mixed
      */
     public function all(): mixed;
+    /**
+     * all
+     *
+     * @param array $ids
+     * @return mixed
+     */
+    public function massDestroy(array $ids): mixed;
 }

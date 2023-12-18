@@ -34,8 +34,6 @@
                             <th>Hình ảnh</th>
                             <th>Họ tên</th>
                             <th>Email</th>
-                            <th>Điện thoại</th>
-                            <th>Địa chỉ</th>
                             <th>Vai trò</th>
                             <th>Hành động</th>
                         </tr>
@@ -51,12 +49,10 @@
                             </td>
                             <td>{{ $loop->iteration }}</td>
                             <td>
-                                <img src="{{ $item->getFirstMediaUrl('users') }}" width="120" alt="{{ $item->name }}">
+                                <img src="" width="120" alt="{{ $item->name }}">
                             </td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
-                            <td>{{ $item->phone_number }}</td>
-                            <td>{{ $item->address }}</td>
                             <td>
                                 @foreach ($item->roles as $role)
                                 <span class="bg-warning">{{ $role->title }}</span>
@@ -65,13 +61,13 @@
                             <td>
                                 <div class="d-flex align-items-center list-action">
                                     @can('user_show')
-                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="Xem chi tiết" data-original-title="View" href="{{ route('users.show',['user' => $item->id]) }}"><i class="fa fa-eye mr-0"></i></a>
+                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="Xem chi tiết" data-original-title="View" href="{{ route('users.show', ['user' => $item->id]) }}"><i class="fa fa-eye mr-0"></i></a>
                                     @endcan
                                     @can('user_edit')
-                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Cập nhật" data-original-title="Edit" href="{{ route('users.edit',['user' => $item->id]) }}"><i class="fa fa-pen mr-0"></i></a>
+                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Cập nhật" data-original-title="Edit" href="{{ route('users.edit', ['user' => $item->id]) }}"><i class="fa fa-pen mr-0"></i></a>
                                     @endcan
                                     @can('user_delete')
-                                    <form action="{{ route('users.destroy',['user' => $item->id]) }}" method="POST" id="cateForm{{ $item->id }}">
+                                    <form action="{{ route('users.destroy', ['user' => $item->id]) }}" method="POST" id="cateForm{{ $item->id }}">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger" type="submit"><i class="fa fa-trash-alt mr-0"></i></button>

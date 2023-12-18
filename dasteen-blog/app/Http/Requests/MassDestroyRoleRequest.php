@@ -3,46 +3,26 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Gate;
-use Symfony\Component\HttpFoundation\Response;
 
 class MassDestroyRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
-     * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        return true;
+        return false;
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'ids'   => 'required|array',
-            'ids.*' => 'exists:roles,id',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'ids' => [
-                'required' => 'Mã không được trống',
-                'array' => 'Vui lòng sử dụng mảng',
-            ],
-            'ids.*' => [
-                'exists' => 'Mã quyền truy cập này không tồn tại'
-            ]
+            //
         ];
     }
 }
